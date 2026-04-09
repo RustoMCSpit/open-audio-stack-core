@@ -80,7 +80,7 @@ export const PackageVersionValidator = z.object({
   author: z.string().min(1).max(256),
   changes: z.string().min(1).max(256),
   date: z.string().datetime(),
-  description: z.string().min(1).max(256),
+  description: z.string().min(1).max(1024),
   donate: z.optional(z.string().min(8).max(256).startsWith('https://')),
   files: z.array(PackageFileValidator).min(1).max(256),
   image: z.string().min(8).max(256).startsWith('https://'),
